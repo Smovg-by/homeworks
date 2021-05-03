@@ -14,6 +14,7 @@ function Message(props: MessagePropsType) {
       <div className={classes.imageContainer}>
         <img src={props.avatar} alt="User avatar"/>
       </div>
+      <div className={classes.cloudRadius}></div>
       <div className={classes.messageCloud}>
         <div
           className={classes.userName}>{props.name}</div>
