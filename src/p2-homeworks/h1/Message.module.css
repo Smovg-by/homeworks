@@ -52,6 +52,8 @@
 
 .userMessage {
     max-width: 80%;
+    /*wrap a long single word*/
+    word-wrap: break-word;
     color: #ADFF2F;
     margin: 0 50px 10px 0;
 }
