@@ -1,0 +1,27 @@
+.affairLine {
+    box-sizing: border-box;
+    height: 30px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.button {
+    flex-shrink: 0;
+    border-radius: 5px;
+    width: 60px;
+    color: white;
+    background-color: grey;
+}
+.affairName {
+    font-weight: bold;
+}
