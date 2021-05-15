@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 import Greeting from './Greeting'
+import {UserType} from './HW3';
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+  users: Array<UserType> // need to fix any
+  addUserCallback: (name:string)=>void // need to fix any
 }
 
 // более простой и понятный для новичков
@@ -11,28 +12,44 @@ type GreetingContainerPropsType = {
 
 // более современный и удобный для про :)
 // уровень локальной логики
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
+                                                                   users,
+                                                                   addUserCallback
+                                                                 }) => { // деструктуризация пропсов
+  //Работа с Input:
+  // 1. При onChange поля input сразу закидываем значения в name.
+  // 2. При нажатии на кнопку onClick отправляем name в users
+  // 3. Очищаем текст ошибки и поле ввода input
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
+  const [name, setName] = useState<string>('') // need to fix any
+  const [error, setError] = useState<string>('') // need to fix any
+
+  const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    setError('');
+    setName(e.currentTarget.value) // need to fix
+  }
+  const addUser = () => {
+    if (name === '' || name.indexOf(' ') === 0) {
+      setError('Please, input valid user name')
+    } else {
+      addUserCallback(name)
+      setError('')
+      alert(`Hello, ${name}!`) // need to fix
+      setName('')
     }
-    const addUser = () => {
-        alert(`Hello  !`) // need to fix
-    }
+  }
 
-    const totalUsers = 0 // need to fix
+  const totalUsers = users.length // need to fix
 
-    return (
-        <Greeting
-            name={name}
-            setNameCallback={setNameCallback}
-            addUser={addUser}
-            error={error}
-            totalUsers={totalUsers}
-        />
-    )
+  return (
+    <Greeting
+      name={name}
+      setNameCallback={setNameCallback}
+      addUser={addUser}
+      error={error}
+      totalUsers={totalUsers}
+    />
+  )
 }
 
 export default GreetingContainer
