@@ -1,7 +1,21 @@
 .default {
+  width: 10%;
 
+  background-color: rgb(173, 173, 173);
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 3px 0;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .red {
-    background: red;
+
+
+  background-color: red;
+
+}
+
+.default:disabled {
+  background-color: rgb(170, 170, 170);
 }

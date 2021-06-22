@@ -1,7 +1,16 @@
 .checkbox {
-
+appearance: none;
+  width: 40px;
+  height: 40px;
+  background-color: darkgrey;
 }
 
 .spanClassName {
+  font-size: 20px;
 
+}
+
+.checkbox:checked {
+  appearance: none;
+  background-image: url(./Will_Smith.jpg);
 }
