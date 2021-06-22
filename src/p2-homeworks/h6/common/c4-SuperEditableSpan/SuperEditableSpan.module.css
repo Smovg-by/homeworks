@@ -1,0 +1,10 @@
+.superSpan {
+  display: block;
+  margin-bottom: 10px;
+  width: 40%;
+  border-bottom: 2px solid #aaa;
+  background-color: rgb(241, 241, 241);
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 8px;
+}
