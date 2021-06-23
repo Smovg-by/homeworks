@@ -1,0 +1,10 @@
+.select {
+  height: 2rem;
+  width: 5rem;
+font-size: 20px;
+  background-color: lightgrey;
+}
+
+.option:checked {
+background-color: grey;
+}
