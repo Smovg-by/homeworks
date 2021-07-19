@@ -1,24 +1,24 @@
-import React from "react";
+
+
+import { currentThemeType } from "../h10/bll/switchThemeReducer";
+import DiscreteSlider from "./common/DiscreteSlider";
 import s from "./HW12.module.css";
 
-const themes = ['dark', 'red', 'some'];
+type HW12PropsType = {
+    theme: currentThemeType
+}
 
-function HW12() {
-    const theme = 'some'; // useSelector
-
-    // useDispatch, onChangeCallback
+export function HW12(props: HW12PropsType) {
 
     return (
-        <div className={s[theme]}>
-            <hr/>
-            <span className={s[theme + '-text']}>
+
+        <div className={s[props.theme + '']}>
+            <hr />
+            <span className={s[props.theme + '-text']}>
                 homeworks 12
             </span>
-
-            {/*should work (должно работать)*/}
-            {/*SuperSelect or SuperRadio*/}
-
-            <hr/>
+            <DiscreteSlider />
+            <hr />
         </div>
     );
 }
