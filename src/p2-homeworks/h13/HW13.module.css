@@ -1,0 +1,13 @@
+.input {
+display: block;
+margin: 25px 0 25px 25px;
+}
+
+.btn {
+  display: block;
+  margin: 0 0 25px 25px;
+}
+
+.message {
+  margin-left: 25px;
+}
